@@ -1,0 +1,270 @@
+//Task_1
+import java.util.Scanner;
+public class Task1{
+  public static void main(String[] args){
+    Scanner sc= new Scanner(System.in);
+    System.out.print("Enter anything : ");
+    String str = sc.nextLine();
+    String print = "" ;
+    int now=0 ;
+    for(int idx =0;idx<str.length();idx++){
+      now= (int) str.charAt(idx);
+      if(now>=97 && now<=122){
+        now=now-32;
+      }
+      print = print + (char)now;
+    }
+    System.out.println(print);
+  }
+}
+
+
+//Task_2
+import java.util.Scanner;
+public class Task2{
+  public static void main(String[] args){
+    Scanner sc= new Scanner(System.in);
+    System.out.print("Enter anything : ");
+    String input = sc.nextLine();
+    String reverse ="";
+    String allLower="";
+    for(int j = 0;j<input.length();j++){
+      if(input.charAt(j)>=65 && input.charAt(j)<=90){
+        allLower+= (char)(input.charAt(j)+32);
+      }
+      else{
+        allLower+= (char)input.charAt(j);
+      }
+    }
+    System.out.println("Your Entered text in small letter format is : "+allLower);
+    for(int i = allLower.length()-1;i>=0;i--){
+      reverse+= allLower.charAt(i);
+    }
+    if(reverse.equals(allLower)){
+      System.out.println("true");
+    }
+    else{
+      System.out.println("false");
+    }
+  }
+}
+
+
+//Task_3
+import java.util.Scanner;
+public class Task3{
+  public static void main(String[] args){
+    Scanner sc= new Scanner(System.in);
+    System.out.print("Enter anything : ");
+    String str = sc.nextLine();
+    System.out.print("which character would be use to split  : ");
+    String split = sc.nextLine();
+    for(int i=0;i<str.length();i++){
+      if(str.charAt(i)==split.charAt(0)){
+        System.out.println();
+      }
+      else{
+        System.out.print(str.charAt(i));
+      }
+    }
+    System.out.println();
+  }
+}
+
+
+//Task_4
+import java.util.Scanner;
+public class Task4{
+  public static void main(String[] args){
+    Scanner sc= new Scanner(System.in);
+    System.out.print("Enter anything : ");
+    String input = sc.nextLine();
+    String reverse="";
+    for(int i = input.length()-1;i>=0;i--){
+      reverse+= input.charAt(i);
+    }
+    System.out.println(reverse);
+  }
+}
+
+
+//Task_5
+import java.util.Scanner;
+public class Task5{
+  public static void main(String[] args){
+    Scanner sc= new Scanner(System.in);
+    System.out.print("Enter the phrase : ");
+    String phrase= sc.nextLine();
+    String lower="";
+    for(int i =0;i<phrase.length();i++){
+      if(phrase.charAt(i)>=65 && phrase.charAt(i)<=90){
+        lower+= (char)(phrase.charAt(i)+32);
+      }
+      else{
+        lower+= (char)phrase.charAt(i);
+      }
+    }
+    String vowel = "aeiou";
+    int vowel_count=0, consonant_count=0;
+    for(int i =0;i<lower.length();i++){
+      int vow=0;
+      for(int j=0;j<vowel.length();j++){
+        if(lower.charAt(i)==vowel.charAt(j)){
+          vowel_count++;
+          vow=1;
+          break;
+        }
+      }
+      if(vow==0 && lower.charAt(i)>=97 && lower.charAt(i)<=122){
+        consonant_count++;
+      }
+    }
+    System.out.println(" vowel_count = "+vowel_count+"  and consonant_count = "+consonant_count);
+    System.out.println();
+    if( vowel_count%3==0 && consonant_count%5==0 && vowel_count>0 && consonant_count>0 ){
+      System.out.println("Aaar! Me Plunder!!");
+    }
+    else{
+      System.out.println("Blimey! No Plunder!!");
+    }
+  }
+}
+
+
+//Task_6
+import java.util.Scanner;
+public class Task6{
+  public static void main(String[] args){
+    Scanner sc= new Scanner(System.in);
+    System.out.print("Enter anything : ");
+    String str = sc.nextLine();
+    String word="",reverse="";
+    char split = ' ';
+    for(int i=str.length()-1;i>=0;i--){  
+      if(str.charAt(i)==split){
+      reverse=reverse+word+split;
+      word="";
+      }
+        else{
+          word=str.charAt(i) + word;           
+        }
+    }
+    reverse+=word;
+    System.out.println(reverse);
+  }
+}
+
+
+
+
+//Task_7
+import java.util.Scanner;
+public class Task7{
+  public static void main(String[] args){
+    Scanner sc= new Scanner(System.in);
+    System.out.print("Enter the first string , your input must be lowercase  : ");
+    String str1 = sc.nextLine();
+    System.out.print("Enter the second string , your input must be lowercase : ");
+    String str2 = sc.nextLine();
+    String now="",print="";
+    int count1= 0,count2=0;
+    for(int i = 0; i<str1.length();i++){
+      count1=0;
+      for(int j =0;j<str2.length();j++){
+        if(str1.charAt(i)==str2.charAt(j)){
+          count1++;
+        }
+      }
+      if(count1==0){
+        print=print+(char)str1.charAt(i);
+      }
+    }
+    for(int i = 0; i<str2.length();i++){
+      count2=0;
+      for(int j =0;j<str1.length();j++){
+        if(str2.charAt(i)==str1.charAt(j)){
+          count2++;
+        }
+      }
+      if(count2==0){
+        print=print+(char)str2.charAt(i);
+      }
+    }
+    System.out.println(print.toUpperCase());
+  }
+}
+
+
+//Task_8
+import java.util.Scanner;
+public class Task8{
+  public static void main(String[] args){
+    Scanner sc= new Scanner(System.in);
+    System.out.print("Enter a sentence : ");
+    String str = sc.nextLine();
+    String print= "";
+    for(int i =0;i<str.length();i++){
+      if((str.charAt(i)>=65 && str.charAt(i)<=90) || (str.charAt(i)>=97 && str.charAt(i)<=122)){
+        if(i==0 && str.charAt(i)>=65 && str.charAt(i)<=90){
+          print = print+ (char)(str.charAt(i)+32);
+          continue;
+        } 
+        else if(i==0 && str.charAt(i)>=97 && str.charAt(i)<=122){
+          print = print+ (char)str.charAt(i);
+          continue;
+        }
+        // index greater than 0
+        if(print.charAt(i-1)>=97 && print.charAt(i-1)<=122){
+        print = print+ (char)(str.charAt(i)-32);
+          continue;
+        }
+        else{
+          print = print+ (char)str.charAt(i);
+          continue;
+        }
+      }  
+      else{
+        print=print+(char)str.charAt(i);
+      }
+    
+    }
+    System.out.println(print);
+  }
+}
+
+
+//Task_9
+import java.util.Scanner;
+public class Task9{
+  public static void main(String[] args){
+    Scanner sc= new Scanner(System.in);
+    System.out.print("Enter a password : ");
+    String pass = sc.nextLine();
+    int upper=0,lower=0,digit=0,special=0;
+    if(pass.length()<8){    //character count check
+      System.out.println("False");
+    }
+    else{
+      for(int i =0;i<pass.length();i++){
+        if(pass.charAt(i)>=65 && pass.charAt(i)<=90){  // upper check
+          upper++;
+        }
+        else if(pass.charAt(i)>=97 && pass.charAt(i)<=122){  // lower check
+          lower++;
+        }
+        else if(pass.charAt(i)>=48 && pass.charAt(i)<=57){  // digit check
+          digit++;
+        }
+        else{
+          special++;
+        }
+      }
+      if(upper>0 && lower>0 && digit>0 && special>0){    // final result 
+        System.out.println("True");
+      }
+      else{
+        System.out.println("False");
+      }
+    }
+  }
+}
